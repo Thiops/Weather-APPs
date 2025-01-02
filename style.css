@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Niramit:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Chakra Petch", "Niramit", sans-serif;
+    color: white;
+    font-weight: 600;
+}
+
+body {
+    background: url('assets/bg.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    z-index: -1;
+}
+
+/* Header text with a bright color to grab attention */
+.header-name {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    font-weight: 700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    color: #f3f3f3; /* Bright yellow for visibility */
+}
+
+.main-container {
+    width: 320px;
+    height: 500px;
+    z-index: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Input field labels with a soft white */
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+.city-input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+    padding-right: 40px;
+    color: white; /* White text for input */
+}
+.city-input:focus {
+    border-color: #87d3ff; /* Light blue border on focus */
+    background: rgba(255, 255, 255, 0.2);
+}
+.city-input::placeholder {
+    color: rgba(255, 255, 255, 0.75); /* Slightly faded placeholder */
+}
+
+/* Search button with a hover color */
+.search-btn {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    color: rgb(143, 255, 169);
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+.search-btn:hover {
+    color: #ff8d8d; /* Matches the header color */
+}
+
+/* Weather info colors */
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Location and date: light blue for location, white for date */
+.location-date-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+.location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #00a2ff; /* Light blue for location */
+}
+
+/* Weather summary: yellow for temperature, white for conditions */
+.weather-summary-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.weather-summary-img {
+    width: 120px;
+    height: 120px;
+}
+.weather-summary-info {
+    text-align: end;
+    font-size: 16px;
+    color: #ffcc00; /* Yellow for temperature */
+}
+.weather-summary-info span {
+    color: white; /* White for secondary text */
+}
+
+/* Conditions: distinct icons and text */
+.weather-conditions-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.condition-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: hsl(239, 100%, 69%); /* Light blue for conditions */
+}
+.condition-item span {
+    font-size: 28px;
+    padding-right: 6px;
+    color: #ffe46a; /* Yellow for icons */
+}
+
+/* Forecast items: gradient background and text color */
+.forecast-items-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+}
+.forecast-item {
+    min-width: 70px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+    color: white;
+}
+.forecast-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+.forecast-item-img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Section messages with emphasis */
+.section-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-top: 30%;
+    color: #fff7d6; /* Emphasis with yellow text */
+}
+.section-message img {
+    height: 180px;
+    width: auto;
+}
+
+.name-condition {
+    position: fixed;
+    bottom: 175px;
+    left: 120px;
+    font-size: 13px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+    color: #bf92ff; /* Light blue */
+}
+
+.name-search {
+    font-size: 13px;
+    font-weight: 550;
+    letter-spacing: 1px;
+    color: rgb(13, 0, 255); /* White for general text */
+}
